@@ -8,12 +8,12 @@ IF v=0 THEN
 INSERT INTO `migrations` VALUES ('20171104225441');
 -- Add your query below.
 
---This update brings the following quests minimum level inline with eachother according to:
--- http://web.archive.org/web/20050316083722/http://wow.allakhazam.com:80/db/quest.html?wquest=3561
+-- This updates quest 3562 to be a minimum required level of 45
 -- http://web.archive.org/web/20050117052220/http://wow.allakhazam.com:80/db/quest.html?wquest=3565
+-- (Note archive for 3562 doesn't show a minimum level but it should be the same as 3565)
 
 -- Update quest minimum levels
-UPDATE quest_template SET minLevel = 48 WHERE entry IN (3518, 3541, 3542, 3561, 3562, 3563, 3564, 3565);
+UPDATE quest_template SET minLevel = 45 WHERE entry = 3562;
 
 -- End of migration.
 END IF;
